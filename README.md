@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SevaLink
 
-## Getting Started
+SevaLink is a modern, production-ready web application designed as a Mini Healthcare Support platform for NGOs. It streamlines patient assistance processing, volunteer onboarding, and general support communication.
 
-First, run the development server:
+## Tech Stack
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4, Custom UI components inspired by shadcn/ui
+- **Icons:** Lucide React (Clean, minimal, modern medical/system icons)
+- **Backend/Logic:** Next.js Server Actions with mock in-memory persistence
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **Modern Landing Page:** Clean typography, glassmorphism, responsive design with whitespace-heavy premium layout.
+- **Multi-Purpose Form System:** Tabbed interface for capturing Patient Support, Volunteer Registration, and General Contact.
+- **Smart Summary Generator (AI/Automation Feature):** Form submissions generate a concise AI-like summary using server actions. Example: "Patient John from Kolkata requesting High - Urgent support..."
+- **AI Chatbot (Rule-based):** A floating, animated chatbot interface providing predefined FAQ responses, guiding users to forms and emergency contacts instantly.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## AI & Automation
+SevaLink includes automated workflow enhancements:
+1. **Server-side Summarization:** A smart parser evaluates incoming structured queries and generates a summarized snapshot.
+2. **Interactive Assistant:** The AI Chatbot provides immediate triage capabilities, reducing the human support load for basic inquiries.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project Structure
+- `src/app/`: Core App Router pages and layouts.
+- `src/components/ui/`: Reusable, accessible UI blocks (Buttons, Inputs, Cards).
+- `src/components/forms/`: Complex interactive forms for different NGO use-cases.
+- `src/components/chat/`: The floating AI Chatbot implementation.
+- `src/actions/`: Server actions to handle backend validation and mock persistence.
+- `src/lib/`: Utilities for style merging (`cn`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How to Run Locally
 
-## Learn More
+1. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+2. Start the development server:
+   ```bash
+   pnpm dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to witness the result.
 
-To learn more about Next.js, take a look at the following resources:
+## Constraints & Considerations
+- Employs an in-memory queue for submissions (ideal for linking with Prisma/Postgres or external databases later).
+- Built entirely with Tailwind v4 CSS variables.
+- Uses `React 19` and Server Actions for lean, API-route-free logic.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built for modern healthcare NGOs.*
